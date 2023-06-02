@@ -1,18 +1,23 @@
-import { useState } from 'react'
-import { Button } from 'react-bootstrap'
-import { Counter } from './features/counter/Counter'
+import { Button, Container, Row, Col } from 'react-bootstrap'
 import { NavBar } from './features/nav/NavBar'
 import './App.css'
 import Countries from './features/countries/Countries'
+import CountryInput from './features/countries/CountryInput'
 
 function App() {
 
   return (
     <>
       <NavBar />
-      <h1>Hello World</h1>
-      <Counter />
-      <Countries />
+      <Container>
+        <Row>
+          <CountryInput />
+        </Row>
+        <Row>
+            <Countries />
+
+        </Row>
+      </Container>
     </>
   )
 }
