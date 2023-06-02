@@ -18,7 +18,7 @@ export const countriesSlice = createSlice({
   name: 'countries',
   initialState,
   reducers: {
-    
+
   },
   extraReducers: (builder) => {
     builder.addCase(fetchCountries.pending, (state) => {
@@ -38,5 +38,6 @@ export const countriesSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
+
 
 export default countriesSlice.reducer

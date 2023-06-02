@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchCountries } from './countriesSlice'
-import { Container, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 const Countries = () => {
   const countries = useSelector(state => state.countries)
+  const filter = useSelector(state => state.filter)
+  console.log(filter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchCountries())
   }, [])
+
+  // const filteredCountries = useMemo(() => {
+  //   (countries.countries || [])
+  //     .filter((country) => country === filter )
+  // }, [countries.countries])
 
   return (
     <>
