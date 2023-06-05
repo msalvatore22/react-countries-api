@@ -7,17 +7,24 @@ import { Card } from 'react-bootstrap';
 const Countries = () => {
   const countries = useSelector(state => state.countries)
   const filter = useSelector(state => state.filter)
-  console.log(filter)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(fetchCountries())
   }, [])
 
-  // const filteredCountries = useMemo(() => {
-  //   (countries.countries || [])
-  //     .filter((country) => country === filter )
-  // }, [countries.countries])
+  const countriesFilter = useMemo(() => {
+
+    if(filter.filter === ''){
+      return countries.countries
+    }
+    
+    return countries.countries.filter(country => {
+      return country.region === filter.filter
+    })
+
+  }, [filter, countries])
+
 
   return (
     <>
@@ -26,7 +33,7 @@ const Countries = () => {
       {!countries.loading && countries.countries.length ? (
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
           {
-            countries.countries.map(country => {
+            countriesFilter?.map(country => {
               return (
                 <Card key={country.numericCode} className='m-3' style={{ width: '18rem' }}>
                   <Card.Img style={{width: '100%', height: '200px'}} variant="top" src={country.flags.png} />
