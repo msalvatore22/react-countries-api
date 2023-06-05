@@ -7,6 +7,7 @@ import { Card } from 'react-bootstrap';
 const Countries = () => {
   const countries = useSelector(state => state.countries)
   const filter = useSelector(state => state.filter)
+  const search = useSelector(state => state.search)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -15,15 +16,23 @@ const Countries = () => {
 
   const countriesFilter = useMemo(() => {
 
-    if(filter.filter === ''){
+    if(filter.filter === '' && search.search === ''){
       return countries.countries
     }
-    
-    return countries.countries.filter(country => {
-      return country.region === filter.filter
+
+    let searchedCountries = countries.countries.filter(country => {
+      return country.name.toLowerCase().includes( search.search.toLowerCase() )
     })
 
-  }, [filter, countries])
+    if(filter.filter){
+      return searchedCountries.filter(country => {
+        return country.region === filter.filter
+      })
+    } else {
+      return searchedCountries
+    }
+    
+  }, [filter, search, countries])
 
 
   return (
