@@ -47,10 +47,10 @@ const Countries = () => {
                 <Card key={country.numericCode} className='m-3' style={{ width: '18rem' }}>
                   <Card.Img style={{width: '100%', height: '200px'}} variant="top" src={country.flags.png} />
                   <Card.Body>
-                    <Card.Title>{country.name}</Card.Title>
-                    <p><b>Population: </b>{country.population}</p>
-                    <p><b>Region: </b>{country.region}</p>
-                    <p><b>Capital: </b>{country.capital}</p>
+                    <Card.Title style={{fontWeight: 800}}>{country.name}</Card.Title>
+                    <p className='m-0'><b>Population: </b>{country.population.toLocaleString()}</p>
+                    <p className='m-0'><b>Region: </b>{country.region}</p>
+                    <p className='mb-2'><b>Capital: </b>{country.capital}</p>
                   </Card.Body>
                 </Card>
               )

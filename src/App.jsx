@@ -1,4 +1,4 @@
-import { Button, Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import { NavBar } from './features/nav/NavBar'
 import './App.css'
 import Countries from './features/countries/Countries'
@@ -10,9 +10,11 @@ function App() {
     <>
       <NavBar />
       <Container>
-        <Row>
-          <Col>
+        <Row className="mb-4">
+          <Col xs={4}>
             <Search />
+          </Col>
+          <Col xs={6}>
           </Col>
           <Col>
             <Filter />
