@@ -45,12 +45,12 @@ const Countries = () => {
             countriesFilter?.map(country => {
               return (
                 <Card key={country.numericCode} className='m-3' style={{ width: '18rem' }}>
-                  <Card.Img style={{width: '100%', height: '200px'}} variant="top" src={country.flags.png} />
+                  <Card.Img className='shadow-sm' style={{width: '100%', height: '200px'}} variant="top" src={country.flags.png} />
                   <Card.Body>
-                    <Card.Title style={{fontWeight: 800}}>{country.name}</Card.Title>
+                    <Card.Title style={{fontWeight: 800, margin: '15px 0px'}}>{country.name}</Card.Title>
                     <p className='m-0'><b>Population: </b>{country.population.toLocaleString()}</p>
                     <p className='m-0'><b>Region: </b>{country.region}</p>
-                    <p className='mb-2'><b>Capital: </b>{country.capital}</p>
+                    <p className='mb-4'><b>Capital: </b>{country.capital}</p>
                   </Card.Body>
                 </Card>
               )
