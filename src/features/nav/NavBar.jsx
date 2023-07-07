@@ -16,6 +16,7 @@ export function NavBar() {
         break;
       case false:
         document.querySelector('html').setAttribute("data-bs-theme", "light");
+        break;
     }
   }
 

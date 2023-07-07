@@ -44,7 +44,7 @@ const Countries = () => {
           {
             countriesFilter?.map(country => {
               return (
-                <Card key={country.numericCode} className='m-3' style={{ width: '18rem' }}>
+                <Card key={country.numericCode} className='m-3 shadow-sm' style={{ width: '18rem' }}>
                   <Card.Img className='shadow-sm' style={{width: '100%', height: '200px'}} variant="top" src={country.flags.png} />
                   <Card.Body>
                     <Card.Title style={{fontWeight: 800, margin: '15px 0px'}}>{country.name}</Card.Title>

@@ -18,7 +18,7 @@ const Filter = () => {
   }
 
   return (
-    <DropdownButton variant="light" size="lg" id="dropdown-basic-button" title="Filter by Region ">
+    <DropdownButton className='shadow-sm' variant="light" size="lg" id="dropdown-basic-button" title="Filter by Region ">
       {
         regions.map(region => {
           return <Dropdown.Item key={region} onClick={() => handleDropDownClick(region)}>{region}</Dropdown.Item>

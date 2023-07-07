@@ -10,7 +10,7 @@ const Search = () => {
 
   return (
     <FloatingLabel controlId="floatingInputGrid" label="Search">
-      <Form.Control onChange={(e) => dispatch(setSearch(e.currentTarget.value))} type="search" placeholder="Search for a country.." />
+      <Form.Control className='shadow-sm' onChange={(e) => dispatch(setSearch(e.currentTarget.value))} type="search" placeholder="Search for a country.." />
     </FloatingLabel>
 
   );
